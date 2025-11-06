@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 // ✅ Webhook endpoint
 app.post("/webhook", (req, res) => {
-  logMessage("📩 Webhook received");
+  logMessage("📩 Webhook received at " + new Date().toISOString());
 
   // ✅ Respond immediately to HubSpot (prevents timeouts)
   res.status(204).send();
