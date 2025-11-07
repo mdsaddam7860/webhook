@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
 // Define log file path
 const logDir = path.join(__dirname, "logs");
