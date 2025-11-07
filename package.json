@@ -1,10 +1,10 @@
 {
   "name": "webhook2",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "webhook.js",
   "scripts": {
-    "dev": "node webhook.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node webhook.js"
   },
   "author": "",
   "license": "ISC",

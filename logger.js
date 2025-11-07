@@ -26,4 +26,4 @@ function logMessage(message) {
   });
 }
 
-module.exports = { logMessage };
+export { logMessage };

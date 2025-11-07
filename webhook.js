@@ -1,10 +1,12 @@
-require("dotenv").config();
-const express = require("express");
-const axios = require("axios");
-const { logMessage } = require("./logger");
+import dotenv from "dotenv";
+
+dotenv.config();
+import express from "express";
+import axios from "axios";
+import { logMessage } from "./logger";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const FROM_NUMBER = "+12016446523";
 
 app.use(express.json({ limit: "5mb" }));
@@ -37,7 +39,10 @@ app.post("/webhook", (req, res) => {
 
       logMessage("Parsed request body: " + JSON.stringify(requestBody));
 
-      const { objectId } = requestBody[0] || {};
+      const firstEvent = Array.isArray(requestBody)
+        ? requestBody[0]
+        : requestBody;
+      const { objectId } = firstEvent || {};
       if (!objectId) {
         logMessage("❌ Missing objectId in request body");
         return;
