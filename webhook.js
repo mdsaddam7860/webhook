@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import axios from "axios";
-import { logMessage } from "./logger";
+import { logMessage } from "./logger.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
